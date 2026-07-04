@@ -20,7 +20,7 @@ export default function Hero() {
           </h1>
         </Reveal>
         <Reveal delay={0.15}>
-          <p className="mx-auto mt-6 max-w-2xl text-lg font-light leading-relaxed text-quartzo md:text-xl">
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-light leading-relaxed text-quartzo md:text-xl">
             Presentes únicos, decorações autorais, peças que o mercado não fabrica.
             Feito sob medida, em impressão 3D.
           </p>

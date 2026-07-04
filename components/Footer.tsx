@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-[#4A4340] pt-8 text-center">
-          <p className="text-xs font-light text-blush">
+          <p className="text-center text-xs font-light text-blush">
             &copy; 2026 DINYA Solu&ccedil;&otilde;es Criativas. Todos os direitos reservados.
           </p>
         </div>
