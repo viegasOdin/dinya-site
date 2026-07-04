@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cobre-dinya: #C4907A;
+  --cobre-profundo: #9E6E5C;
+  --cobre-texto: #855A48;
+  --linho: #F4F1EB;
+  --blush-suave: #EDE0D8;
+  --carvao-quente: #3A3330;
+  --quartzo: #6B6059;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-dm-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cormorant);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
