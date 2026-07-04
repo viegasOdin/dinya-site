@@ -1,25 +1,31 @@
 # Dinya Site — SYNC
 
-**Atualizado:** 2026-06-28 — Sessão 1
+**Atualizado:** 2026-07-04 — Sessão 2
 
 ## Branch: main
-- HEAD `—` — projeto sem commits ainda
-- Setup inicial realizado
+- HEAD `516f86e` — sincronizado com `origin/main` (https://github.com/viegasOdin/dinya-site)
+- Working tree: apenas arquivos de memória desta sessão
 
 ## Status dos módulos
 
 | Módulo | Status |
 |--------|--------|
 | Setup (.claude, memory, hooks) | ✅ Concluído |
-| Estrutura do projeto | 🔲 Pendente |
+| Landing page (8 componentes) | ✅ Concluído |
+| UI/UX + acessibilidade WCAG AA | ✅ Concluído |
+| Logo oficial + favicon | ✅ Concluído |
+| Animações (motion/react) | ✅ Concluído |
+| Publicação GitHub | ✅ Concluído |
+| Deploy Cloudflare Pages | 🔲 Pendente (conectar repo no painel) |
 
 ## Pendências
-1. Definir e implementar a estrutura do projeto
-2. Configurar scripts npm
-3. Primeiro commit
+1. Conectar repo no Cloudflare Pages — build `npm run build`, output `out`
+2. Trocar número placeholder do WhatsApp em `lib/whatsapp.ts`
+3. Foto real da equipe em `QuemSomos.tsx`
+4. Confirmar domínio (metadataBase = `https://dinya.com.br`)
 
 ## Últimos commits
 
 | Hash | Descrição |
 |------|-----------|
-| — | Projeto ainda sem commits |
+| `516f86e` | Site institucional DINYA: revisão UI/UX, logo oficial e animações |
