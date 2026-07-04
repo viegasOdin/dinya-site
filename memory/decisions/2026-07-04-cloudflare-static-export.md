@@ -17,6 +17,12 @@ O site é servido como export estático do Next.js (`output: "export"` em `next.
 - Build de deploy: `npm run build` → output em `out/`.
 - Se um dia precisar de SSR/API routes, migrar para Cloudflare Workers com o adapter oficial.
 
+## Adendo (2026-07-04, mais tarde): GitHub Pages como deploy automático
+
+- Workflow `.github/workflows/deploy.yml` builda e publica `out/` no GitHub Pages a cada push no `main`.
+- `basePath` vem de `process.env.BASE_PATH` (CI usa `/dinya-site`; dev e Cloudflare ficam na raiz).
+- Cloudflare pode: (a) Pages conectado direto ao repo — deploy próprio, independente do GitHub Pages; ou (b) só DNS/proxy na frente do GitHub Pages com domínio customizado.
+
 ## Decisões de UI relacionadas (mesma sessão)
 
 - Paleta do brand kit mantida, com ajustes de acessibilidade: `quartzo` escurecido para `#6B6059` e novo token `cobre-text #855A48` (labels pequenos) — os tons originais falhavam WCAG AA (2.4–3.9:1).
