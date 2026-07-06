@@ -7,3 +7,8 @@ export const WA_EMPRESA = `https://wa.me/${NUMERO}?text=${encodeURIComponent(
 export const WA_PESSOAL = `https://wa.me/${NUMERO}?text=${encodeURIComponent(
   "Olá, gostaria de encomendar algo especial da DINYA."
 )}`
+
+export const waProduto = (nome: string) =>
+  `https://wa.me/${NUMERO}?text=${encodeURIComponent(
+    `Olá, vim do site e gostei do produto ${nome}.`
+  )}`

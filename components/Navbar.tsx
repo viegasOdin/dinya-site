@@ -5,10 +5,11 @@ import { AnimatePresence, MotionConfig, motion } from "motion/react"
 import Logo from "./Logo"
 
 const links = [
-  { label: "O que fazemos", href: "#o-que-fazemos" },
-  { label: "Brindes Corporativos", href: "#corporativo" },
-  { label: "Quem somos", href: "#quem-somos" },
-  { label: "Contato", href: "#contato" },
+  { label: "O que fazemos", href: "/#o-que-fazemos" },
+  { label: "Brindes Corporativos", href: "/#corporativo" },
+  { label: "Catálogo", href: "/catalogo" },
+  { label: "Quem somos", href: "/#quem-somos" },
+  { label: "Contato", href: "/#contato" },
 ]
 
 export default function Navbar() {
@@ -21,7 +22,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 border-b border-blush bg-linho/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#inicio" onClick={handleClick} aria-label="DINYA — voltar ao início">
+        <a href="/#inicio" onClick={handleClick} aria-label="DINYA — voltar ao início">
           <Logo />
         </a>
 

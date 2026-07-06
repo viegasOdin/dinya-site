@@ -1,10 +1,11 @@
 import Logo from "./Logo"
 
 const links = [
-  { label: "O que fazemos", href: "#o-que-fazemos" },
-  { label: "Brindes Corporativos", href: "#corporativo" },
-  { label: "Quem somos", href: "#quem-somos" },
-  { label: "Contato", href: "#contato" },
+  { label: "O que fazemos", href: "/#o-que-fazemos" },
+  { label: "Brindes Corporativos", href: "/#corporativo" },
+  { label: "Catálogo", href: "/catalogo" },
+  { label: "Quem somos", href: "/#quem-somos" },
+  { label: "Contato", href: "/#contato" },
 ]
 
 export default function Footer() {
@@ -20,30 +21,15 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap gap-x-10 gap-y-4">
-            <a
-              href={links[0].href}
-              className="text-sm font-light text-blush transition-colors hover:text-cobre"
-            >
-              {links[0].label}
-            </a>
-            <a
-              href={links[1].href}
-              className="text-sm font-light text-blush transition-colors hover:text-cobre"
-            >
-              {links[1].label}
-            </a>
-            <a
-              href={links[2].href}
-              className="text-sm font-light text-blush transition-colors hover:text-cobre"
-            >
-              {links[2].label}
-            </a>
-            <a
-              href={links[3].href}
-              className="text-sm font-light text-blush transition-colors hover:text-cobre"
-            >
-              {links[3].label}
-            </a>
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-light text-blush transition-colors hover:text-cobre"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
 
