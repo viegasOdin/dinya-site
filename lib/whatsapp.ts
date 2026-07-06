@@ -1,4 +1,4 @@
-const NUMERO = "5511999999999"
+const NUMERO = "5511913014799"
 
 export const WA_EMPRESA = `https://wa.me/${NUMERO}?text=${encodeURIComponent(
   "Olá, gostaria de solicitar um orçamento para brindes corporativos."
