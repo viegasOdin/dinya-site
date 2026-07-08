@@ -61,6 +61,21 @@ export default function ProdutoPage({ params }: { params: { slug: string } }) {
                   ))}
                 </div>
 
+                {produto.diferenciais && (
+                  <>
+                    <h2 className="mt-8 font-sans text-xs font-medium uppercase tracking-[0.2em] text-cobre-text">
+                      Por que escolher
+                    </h2>
+                    <ul className="mt-4 space-y-1">
+                      {produto.diferenciais.map((item) => (
+                        <li key={item} className="font-light text-quartzo">
+                          &#10003; {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+
                 <h2 className="mt-8 font-sans text-xs font-medium uppercase tracking-[0.2em] text-cobre-text">
                   Especificações
                 </h2>
