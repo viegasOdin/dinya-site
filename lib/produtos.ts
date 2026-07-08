@@ -21,7 +21,7 @@ export function slugify(texto: string) {
 export const produtos: Produto[] = [
   {
     nome: "Serenidade Sagrada: Kit Altar Nossa Senhora com Difusor de Aromas",
-    imagens: ["/catalogo/Kit Nsa. Senhora Completo.jpg", "/catalogo/kit_nossa_senhora_difusor.jpg", "/catalogo/kit_nossa_senhora_porta_vela.jpg"],
+    imagens: ["/catalogo/Kit Santa Porta Vela.png", "/catalogo/Kit Santa Difusor.png"],
     descricao: [
       "Encontre paz e elegância em um único espaço com este kit exclusivo que une devoção espiritual e design contemporâneo. A imagem de Nossa Senhora, com seus 17 cm de altura, apresenta um acabamento premium com manto em tons profundos de azul-marinho e um delicado toque aveludado que captura a luz com leve brilho, criando uma presença serena e contemplativa. Complementando a composição, a bandeja marmorizada em tons neutros oferece uma base sofisticada com textura granulosa que evoca a elegância da pedra natural, enquanto o difusor de aromas com design minimalista e acabamento premium completa a harmonia visual do conjunto. Cada elemento foi cuidadosamente pensado para criar um espaço de repouso espiritual em sua casa, quarto ou escritório—um refúgio de tranquilidade que combina funcionalidade com reverência.",
       "Este kit é ideal para quem busca decoração com propósito, um presente significativo para pessoas queridas ou um apoio visual para momentos de oração e meditação. A composição equilibrada transforma qualquer ambiente em um pequeno santuário pessoal, irradiando calma e beleza.",
