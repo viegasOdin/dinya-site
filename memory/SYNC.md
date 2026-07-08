@@ -1,10 +1,10 @@
 # Dinya Site — SYNC
 
-**Atualizado:** 2026-07-06 — Sessão 3
+**Atualizado:** 2026-07-08 — Sessão 4
 
 ## Branch: main
-- HEAD `5a6f107` — sincronizado com `origin/main` (https://github.com/viegasOdin/dinya-site)
-- Working tree: página de catálogo desta sessão, ainda não commitada (ver Pendências)
+- HEAD `6ed8e3f` — sincronizado com `origin/main`? **não** — commit local ainda não enviado (push pendente de confirmação)
+- Working tree: limpo (tudo commitado nesta sessão)
 
 ## Status dos módulos
 
@@ -18,21 +18,23 @@
 | Tipografia justificada + hifenização pt-BR | ✅ Concluído |
 | Hero — animação logo 3D | ✅ Concluído |
 | Deploy GitHub Pages (Actions) | ✅ Concluído — automático a cada push em `main` |
-| Página de Catálogo (`/catalogo`) | ✅ Concluído — produtos placeholder |
-| Publicação GitHub | ✅ Concluído |
+| Número WhatsApp real | ✅ Concluído |
+| Página de Catálogo (`/catalogo`) + página de produto (`/catalogo/[slug]`) | ✅ Concluído |
+| Catálogo — produtos reais | 🔶 3 cadastrados (Nossa Senhora, Ovo de Dragão, Prendedor de Canga) |
+| Dev server fixo na porta 4000 | ✅ Concluído |
 
 ## Pendências
-1. Trocar número placeholder do WhatsApp em `lib/whatsapp.ts` (`5511999999999`)
-2. Substituir os 4 produtos placeholder de `components/Catalogo.tsx` por catálogo real (fotos + specs)
-3. Foto real da equipe em `QuemSomos.tsx`
-4. Confirmar domínio (metadataBase = `https://dinya.com.br`)
+1. Cadastrar produtos restantes em `lib/produtos.ts` — fotos de "Brindes Corporativos - Jogo da Velha" e "Porta Vela" já estão em `public/catalogo/` sem entrada no catálogo ainda
+2. Foto real da equipe em `QuemSomos.tsx`
+3. Confirmar domínio (metadataBase = `https://dinya.com.br`)
+4. Confirmar com o usuário se pode dar `git push` do commit `6ed8e3f`
 
 ## Últimos commits
 
 | Hash | Descrição |
 |------|-----------|
+| `6ed8e3f` | Adiciona produtos reais ao catálogo e fixa porta do dev server |
+| `02843b8` | Adiciona página de produto e galeria de imagens ao catálogo |
+| `6c90265` | Atualiza número real do WhatsApp |
+| `1db247e` | Adiciona página de Catálogo com compra via WhatsApp |
 | `5a6f107` | Tipografia: texto corrido justificado com hifenização pt-BR |
-| `586969a` | CI: deploy automático no GitHub Pages a cada push no main |
-| `b5d880b` | Hero: animação do logo sendo impresso em 3D (camada por camada + bico extrusor) |
-| `5506275` | chore(memory): encerra sessão 2 — revisão UI/UX e publicação |
-| `516f86e` | Site institucional DINYA: revisão UI/UX, logo oficial e animações |
