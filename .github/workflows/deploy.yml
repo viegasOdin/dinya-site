@@ -24,6 +24,9 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npm run sync:catalogo
+        env:
+          DINYA_API_URL: https://api.dinya.com.br
       - run: npm run build
         env:
           BASE_PATH: /dinya-site

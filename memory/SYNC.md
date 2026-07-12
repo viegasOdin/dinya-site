@@ -1,8 +1,14 @@
 # Dinya Site — SYNC
 
-**Atualizado:** 2026-07-08 — Sessão 4
+**Atualizado:** 2026-07-11 — Sessão 5
 
-## Branch: main
+## Branch: claude/catalog-online-store-mylrx8
+Sessão de integração com o `dinya-app` (ERP, repo irmão) — sincronização de catálogo
+implementada e testada ponta a ponta, ver `memory/decisions/2026-07-11-sincronizacao-catalogo-
+dinya-app.md` e `memory/journal/2026-07-11.md`. Ainda **inerte** em produção: nenhum produto real
+tem `codigoErp`, e o `dinya-app` de produção ainda não expõe `/public/catalogo`.
+
+## Status anterior (Sessão 4, ainda válido) — branch main
 - HEAD `6ed8e3f` — sincronizado com `origin/main`? **não** — commit local ainda não enviado (push pendente de confirmação)
 - Working tree: limpo (tudo commitado nesta sessão)
 

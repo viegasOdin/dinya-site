@@ -1,9 +1,31 @@
+import catalogoErpGerado from "./catalogo-erp.gerado.json"
+
 export interface Produto {
   nome: string
   imagens?: string[]
   descricao: string[]
   diferenciais?: string[]
   especificacoes: string[]
+  // vincula este produto ao código do dinya-app (ex. "P0001") — sem isso o
+  // produto nunca é atualizado pela sincronização, fica só manual
+  codigoErp?: string
+  // preenchidos só quando o produto vem (ou está vinculado) ao dinya-app;
+  // ainda sem uso na UI — disponíveis pra quando o preço for exibido no site
+  preco?: number
+  disponibilidade?: Disponibilidade
+}
+
+export type Disponibilidade = { tipo: "sob_encomenda" } | { tipo: "estoque"; pecas: number | null }
+
+export interface ItemCatalogoErp {
+  codigo: string
+  tipo: "produto" | "kit"
+  nome: string
+  preco: number
+  disponibilidade: Disponibilidade
+  descricao: string[]
+  diferenciais: string[]
+  imagens: string[]
 }
 
 const DIACRITICOS = /[̀-ͯ]/g
@@ -17,8 +39,55 @@ export function slugify(texto: string) {
     .replace(/(^-|-$)/g, "")
 }
 
+/**
+ * Mescla o catálogo manual com o que veio do dinya-app (gerado por
+ * scripts/sync-catalogo.mjs em lib/catalogo-erp.gerado.json).
+ *
+ * - Produto manual com `codigoErp` correspondente: campos do ERP sobrescrevem
+ *   os manuais, MAS um campo vazio no ERP (staff ainda não preencheu) nunca
+ *   apaga conteúdo manual já existente — cai pro valor manual.
+ * - Produto manual sem `codigoErp`, ou sem correspondência no ERP: fica como
+ *   está, intocado.
+ * - Item do ERP sem nenhum produto manual vinculado: vira uma entrada nova,
+ *   gerada só com o que o ERP tem (sem `especificacoes`, que não existe lá).
+ */
+export function mesclarComErp(manuais: Produto[], itensErp: ItemCatalogoErp[]): Produto[] {
+  const vinculados = new Set<string>()
+
+  const mesclados = manuais.map((produto): Produto => {
+    if (!produto.codigoErp) return produto
+    const item = itensErp.find((i) => i.codigo === produto.codigoErp)
+    if (!item) return produto
+    vinculados.add(item.codigo)
+    return {
+      ...produto,
+      nome: item.nome,
+      descricao: item.descricao.length > 0 ? item.descricao : produto.descricao,
+      diferenciais: item.diferenciais.length > 0 ? item.diferenciais : produto.diferenciais,
+      imagens: item.imagens.length > 0 ? item.imagens : produto.imagens,
+      preco: item.preco,
+      disponibilidade: item.disponibilidade,
+    }
+  })
+
+  const novos = itensErp
+    .filter((item) => !vinculados.has(item.codigo))
+    .map((item): Produto => ({
+      codigoErp: item.codigo,
+      nome: item.nome,
+      imagens: item.imagens,
+      descricao: item.descricao.length > 0 ? item.descricao : ["Descrição em breve."],
+      diferenciais: item.diferenciais.length > 0 ? item.diferenciais : undefined,
+      especificacoes: [],
+      preco: item.preco,
+      disponibilidade: item.disponibilidade,
+    }))
+
+  return [...mesclados, ...novos]
+}
+
 // ponytail: specs de peso/prazo ainda pendentes — placeholder com LogoIcon nos itens sem `imagens`
-export const produtos: Produto[] = [
+const produtosManuais: Produto[] = [
   {
     nome: "Serenidade Sagrada: Kit Altar Nossa Senhora com Difusor de Aromas",
     imagens: ["/catalogo/kit_santa_porta_vela.png", "/catalogo/kit_santa_difusor.png"],
@@ -73,3 +142,8 @@ export const produtos: Produto[] = [
     ],
   }
 ]
+
+export const produtos: Produto[] = mesclarComErp(
+  produtosManuais,
+  catalogoErpGerado as ItemCatalogoErp[]
+)
