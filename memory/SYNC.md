@@ -2,11 +2,24 @@
 
 **Atualizado:** 2026-07-11 — Sessão 5
 
-## Branch: claude/catalog-online-store-mylrx8
+## Branch: main — `claude/catalog-online-store-mylrx8` mesclada (fast-forward, `dcb1849..e080a3f`), push feito em `origin/main`
+
 Sessão de integração com o `dinya-app` (ERP, repo irmão) — sincronização de catálogo
-implementada e testada ponta a ponta, ver `memory/decisions/2026-07-11-sincronizacao-catalogo-
-dinya-app.md` e `memory/journal/2026-07-11.md`. Ainda **inerte** em produção: nenhum produto real
-tem `codigoErp`, e o `dinya-app` de produção ainda não expõe `/public/catalogo`.
+implementada, testada ponta a ponta e mesclada em `main`. Push em `main` já disparou o deploy
+automático (Actions → GitHub Pages) — como `sync:catalogo` ainda não sincroniza nada de verdade
+(produção do `dinya-app` não expõe `/public/catalogo` ainda), o build deve sair idêntico ao
+publicado antes desta sessão: 3 produtos manuais, sem mudança visível pro visitante. Ver
+`memory/decisions/2026-07-11-sincronizacao-catalogo-dinya-app.md` e
+`memory/journal/2026-07-11.md`.
+
+**Ainda inerte** até: (1) nenhum produto real tem `codigoErp` ainda, (2) `dinya-app` de produção
+não expõe `/public/catalogo` ainda (branch `development` lá, não deployado), (3) falta o gatilho
+`repository_dispatch` do `dinya-app` pro `dinya-site`. **Aberto no `dinya-app`:** UI de admin
+(frontend) pra editar disponibilidade/estoque/fotos do site ainda não existe — confirmado nesta
+sessão que nenhuma tela em `frontend/app/admin/produtos|kits` referencia os campos novos; hoje só
+dá pra editar via API/Postman. Usuário sinalizou que uma modificação adicional no `dinya-app`
+ainda vai acontecer antes de fechar o ciclo — branch `development` do `dinya-app` deliberadamente
+**não foi mesclada** em `main` ainda (ao contrário do `dinya-site`, que já foi).
 
 ## Status anterior (Sessão 4, ainda válido) — branch main
 - HEAD `6ed8e3f` — sincronizado com `origin/main`? **não** — commit local ainda não enviado (push pendente de confirmação)

@@ -2,7 +2,7 @@
 
 **Atualizado:** 2026-07-11 — Sessão 5 — Sincronização de catálogo com o dinya-app
 
-> **Baseline atual:** site publicado no GitHub Pages (deploy automático via Actions a cada push em `main`); catálogo pode ser sincronizado a partir do ERP (`dinya-app`), mas ainda não está ligado a nenhum produto real — ver "Próxima sessão"
+> **Baseline atual:** site publicado no GitHub Pages (deploy automático via Actions a cada push em `main`); catálogo pode ser sincronizado a partir do ERP (`dinya-app`), mas ainda não está ligado a nenhum produto real — ver "Próxima sessão". Sincronização já mesclada em `main` (fast-forward de `claude/catalog-online-store-mylrx8`) e publicada em `origin/main` — deploy automático disparado, sem mudança visível esperada (sync ainda é no-op em produção).
 > **Stack:** Next.js 14 (App Router, `output: "export"`) + Tailwind 3.4 + motion@12
 > **Branch:** `main` → `origin` = https://github.com/viegasOdin/dinya-site
 > **Repo irmão:** `dinya-app` (ERP — precificação, estoque, pedidos), agora fonte opcional de dados do catálogo — ver `memory/decisions/2026-07-11-sincronizacao-catalogo-dinya-app.md`
@@ -53,3 +53,4 @@ npm run build   # export estático em out/
 5. Acompanhar deploy do `dinya-app` em produção — o passo `sync:catalogo` do CI já está no workflow, mas não sincroniza nada de verdade até `api.dinya.com.br` ter o endpoint `/public/catalogo` no ar
 6. Falta o gatilho `repository_dispatch` do `dinya-app` pro `dinya-site` (rebuild quando o catálogo muda só no ERP, sem push no site)
 7. Decidir se o preço (já disponível em `produto.preco` depois da sincronização) deve aparecer na UI do site — hoje não aparece em lugar nenhum
+8. **`dinya-app` ainda tem uma modificação pendente antes de fechar o ciclo** (usuário sinalizou, não especificado ainda) — branch `development` de lá deliberadamente não foi mesclada em `main`. Confirmado nesta sessão: a UI de admin (frontend) pra editar disponibilidade/estoque/fotos do site **não existe** — só a API. Provável candidata a ser essa modificação pendente, mas não assumir sem confirmar.
