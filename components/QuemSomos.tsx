@@ -1,5 +1,4 @@
 import Reveal from "./Reveal"
-import LogoIcon from "./LogoIcon"
 
 export default function QuemSomos() {
   const listItems = [
@@ -71,11 +70,16 @@ export default function QuemSomos() {
             </p>
           </Reveal>
 
-          {/* Photo placeholder */}
           <Reveal delay={0.15} className="flex items-start md:pt-12">
-            <div className="flex aspect-[4/3] w-full items-center justify-center rounded bg-blush">
-              <LogoIcon className="h-28 w-auto text-cobre" />
-            </div>
+            <img
+              src="/equipe-dinya.jpg"
+              alt="Os quatro integrantes da equipe DINYA"
+              width="1195"
+              height="896"
+              loading="lazy"
+              decoding="async"
+              className="aspect-[4/3] w-full rounded object-cover"
+            />
           </Reveal>
         </div>
       </div>

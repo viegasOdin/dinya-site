@@ -24,6 +24,8 @@ export default function ProdutoCard({ produto }: { produto: Produto }) {
           <img
             src={imagens[indice]}
             alt={produto.nome}
+            loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover"
           />
           {imagens.length > 1 && (
@@ -46,7 +48,7 @@ export default function ProdutoCard({ produto }: { produto: Produto }) {
 
       <Link
         href={`/catalogo/${slug}`}
-        className="mt-2 inline-block text-sm font-medium text-cobre-text underline-offset-2 hover:underline"
+        className="mt-2 inline-flex min-h-11 items-center text-sm font-medium text-cobre-text underline-offset-2 hover:underline"
       >
         Ver mais
       </Link>

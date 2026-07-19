@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
 import Corporativo from "@/components/Corporativo"
+import DestaquesProdutos from "@/components/DestaquesProdutos"
 import OQueFazemos from "@/components/OQueFazemos"
 import QuemSomos from "@/components/QuemSomos"
 import Contato from "@/components/Contato"
@@ -11,9 +12,10 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="conteudo">
         <Hero />
         <Corporativo />
+        <DestaquesProdutos />
         <OQueFazemos />
         <QuemSomos />
         <Contato />

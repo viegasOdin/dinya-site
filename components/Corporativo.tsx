@@ -54,7 +54,7 @@ export default function Corporativo() {
               href={WA_EMPRESA}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded bg-cobre-deep px-8 py-3 text-sm font-medium uppercase tracking-widest text-linho transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#7A5240]"
+              className="inline-flex min-h-11 items-center gap-2 rounded bg-cobre-text px-8 py-3 text-sm font-medium uppercase tracking-widest text-linho transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#684436] motion-reduce:transform-none motion-reduce:transition-none"
             >
               <FaWhatsapp size={18} />
               Solicitar or&ccedil;amento

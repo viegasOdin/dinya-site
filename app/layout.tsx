@@ -39,7 +39,7 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${cormorant.variable} ${dmSans.variable}`}>
       <body className="bg-linho font-sans text-carvao antialiased">
         <a
-          href="#inicio"
+          href="#conteudo"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-carvao focus:px-4 focus:py-2 focus:text-linho"
         >
           Pular para o conteúdo

@@ -23,37 +23,46 @@ export default function ProdutoPage({ params }: { params: { slug: string } }) {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="conteudo">
         <section className="bg-white px-6 py-16 md:py-24">
           <div className="mx-auto max-w-6xl">
             <Link
               href="/catalogo"
-              className="text-sm font-light text-quartzo transition-colors hover:text-cobre-text"
+              className="inline-flex min-h-11 items-center text-sm font-light text-quartzo transition-colors hover:text-cobre-text"
             >
               &larr; Voltar ao catálogo
             </Link>
 
-            <Reveal className="mt-6 grid gap-12 md:grid-cols-2">
-              <div>
-                <ProdutoGaleria imagens={produto.imagens ?? []} nome={produto.nome} />
-              </div>
+            <Reveal className="mt-6 grid gap-x-12 md:grid-cols-2">
+              <h1 className="font-display text-3xl font-light text-carvao md:col-start-2 md:row-start-1 md:text-4xl">
+                {produto.nome}
+              </h1>
 
-              <div>
-                <h1 className="font-display text-3xl font-light text-carvao md:text-4xl">
-                  {produto.nome}
-                </h1>
+              <div className="mt-6 md:col-start-2 md:row-start-2">
+                <div className="rounded bg-linho p-4">
+                  <p className="font-medium text-carvao">Preço e prazo sob consulta</p>
+                  <p className="mt-1 text-sm font-light leading-relaxed text-quartzo">
+                    Produção sob demanda. Consulte personalização e entrega no atendimento.
+                  </p>
+                </div>
 
                 <a
                   href={waProduto(produto.nome)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center justify-center gap-2 rounded bg-cobre-deep px-8 py-3 text-sm font-medium uppercase tracking-widest text-linho transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#7A5240]"
+                  className="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded bg-cobre-text px-8 py-3 text-sm font-medium uppercase tracking-widest text-linho transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#684436] motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   <FaWhatsapp size={18} />
-                  Comprar
+                  Comprar pelo WhatsApp
                 </a>
+              </div>
 
-                <div className="mt-8 space-y-4">
+              <div className="mt-8 md:col-start-1 md:row-span-3 md:row-start-1 md:mt-0">
+                <ProdutoGaleria imagens={produto.imagens ?? []} nome={produto.nome} />
+              </div>
+
+              <div className="mt-8 md:col-start-2 md:row-start-3">
+                <div className="space-y-4">
                   {produto.descricao.map((paragrafo, i) => (
                     <p key={i} className="font-light leading-relaxed text-quartzo">
                       {paragrafo}

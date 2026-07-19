@@ -7,7 +7,7 @@ export default function CatalogoPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="conteudo">
         <Catalogo />
       </main>
       <Footer />

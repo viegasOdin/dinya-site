@@ -31,7 +31,7 @@ export default function Hero() {
               href={WA_EMPRESA}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded bg-cobre-deep px-8 py-3 text-sm font-medium uppercase tracking-widest text-linho transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#7A5240]"
+              className="inline-flex min-h-11 items-center gap-2 rounded bg-cobre-text px-8 py-3 text-sm font-medium uppercase tracking-widest text-linho transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#684436] motion-reduce:transform-none motion-reduce:transition-none"
             >
               <FaWhatsapp size={18} />
               WhatsApp &mdash; Sou empresa
@@ -40,7 +40,7 @@ export default function Hero() {
               href={WA_PESSOAL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded border border-cobre bg-transparent px-8 py-3 text-sm font-medium uppercase tracking-widest text-carvao transition-all duration-200 hover:-translate-y-0.5 hover:bg-blush"
+              className="inline-flex min-h-11 items-center gap-2 rounded border border-cobre-text bg-transparent px-8 py-3 text-sm font-medium uppercase tracking-widest text-carvao transition-all duration-200 hover:-translate-y-0.5 hover:bg-blush motion-reduce:transform-none motion-reduce:transition-none"
             >
               Quero algo especial
             </a>

@@ -20,6 +20,7 @@ export default function ProdutoGaleria({ imagens, nome }: { imagens: string[]; n
         <img
           src={imagens[selecionada]}
           alt={nome}
+          decoding="async"
           className="h-full w-full object-cover"
         />
       </div>
@@ -37,7 +38,7 @@ export default function ProdutoGaleria({ imagens, nome }: { imagens: string[]; n
                 i === selecionada ? "ring-cobre-deep" : "ring-transparent hover:ring-blush"
               }`}
             >
-              <img src={src} alt="" className="h-full w-full object-cover" />
+              <img src={src} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
             </button>
           ))}
         </div>
