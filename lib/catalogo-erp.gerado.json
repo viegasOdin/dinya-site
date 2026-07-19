@@ -1,5 +1,25 @@
 [
   {
+    "codigo": "P0020",
+    "tipo": "produto",
+    "nome": "Porta Chaves - Fusca",
+    "preco": 77.95,
+    "disponibilidade": {
+      "tipo": "sob_encomenda"
+    },
+    "descricao": [
+      "Um presente que vai muito além da decoração: ele guarda as chaves e também uma história. 🧡",
+      "Este porta-chaves em formato de Fusca foi criado especialmente para um chá de casa nova, reproduzindo a cor real do carro do casal e trazendo na placa os nomes e o ano desse novo começo.",
+      "Produzido em impressão 3D e feito sob encomenda, cada detalhe pode ser personalizado para transformar uma lembrança especial em uma peça única, afetiva e funcional.",
+      "✨ Personalização com nomes e ano 🚗 Cor inspirada no Fusca real 🧩 Produzido em impressão 3D 🏡 Uma ideia criativa para chá de casa nova, casamento ou presente especial",
+      "Quer criar uma versão com a sua história? Entre em contato e faça sua encomenda."
+    ],
+    "diferenciais": [],
+    "imagens": [
+      "https://pub-7aaae25995dd4915b01f29ee3a67a3ba.r2.dev/produtos/P0020/254cc81a5a0241bfaee11170990dfed3_ChatGPT Image 18 de jul. de 2026, 23_48_20.png"
+    ]
+  },
+  {
     "codigo": "P0021",
     "tipo": "produto",
     "nome": "Luminaria Wave",
@@ -46,6 +66,25 @@
     "imagens": [
       "https://pub-7aaae25995dd4915b01f29ee3a67a3ba.r2.dev/produtos/P0022/6a3ae5b0a34848009678b863e3496274_luminaria_mesh_ad_1.png",
       "https://pub-7aaae25995dd4915b01f29ee3a67a3ba.r2.dev/produtos/P0022/5b40331661104d5b9dc67ffc21000c6d_luminaria_mesh_ad_2.png"
+    ]
+  },
+  {
+    "codigo": "P0029",
+    "tipo": "produto",
+    "nome": "Porta Lápis Puffer",
+    "preco": 20.61,
+    "disponibilidade": {
+      "tipo": "sob_encomenda"
+    },
+    "descricao": [
+      "Organização com personalidade para deixar sua mesa muito mais divertida. ✨",
+      "O Porta-lápis Puffer, da Coleção Dinya Play 2026, une funcionalidade e design em uma peça produzida em impressão 3D, inspirada nas icônicas jaquetas puffer. Ideal para organizar canetas, lápis, pincéis de maquiagem e pequenos acessórios com muito estilo.",
+      "Uma escolha criativa para o escritório, cantinho de estudos, penteadeira ou para presentear alguém especial. 💜",
+      "Entre em contato e escolha a sua cor!"
+    ],
+    "diferenciais": [],
+    "imagens": [
+      "https://pub-7aaae25995dd4915b01f29ee3a67a3ba.r2.dev/produtos/P0029/c15482fff2d3401ebe976f5def45292a_porta_lapis_puffer_ad.png"
     ]
   },
   {
