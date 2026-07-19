@@ -70,7 +70,7 @@ export default function ProdutoPage({ params }: { params: { slug: string } }) {
                   ))}
                 </div>
 
-                {produto.diferenciais && (
+                {produto.diferenciais && produto.diferenciais.length > 0 && (
                   <>
                     <h2 className="mt-8 font-sans text-xs font-medium uppercase tracking-[0.2em] text-cobre-text">
                       Por que escolher
@@ -85,16 +85,20 @@ export default function ProdutoPage({ params }: { params: { slug: string } }) {
                   </>
                 )}
 
-                <h2 className="mt-8 font-sans text-xs font-medium uppercase tracking-[0.2em] text-cobre-text">
-                  Especificações
-                </h2>
-                <ul className="mt-4 space-y-1">
-                  {produto.especificacoes.map((spec) => (
-                    <li key={spec} className="font-light text-quartzo">
-                      &middot; {spec}
-                    </li>
-                  ))}
-                </ul>
+                {produto.especificacoes.length > 0 && (
+                  <>
+                    <h2 className="mt-8 font-sans text-xs font-medium uppercase tracking-[0.2em] text-cobre-text">
+                      Especificações
+                    </h2>
+                    <ul className="mt-4 space-y-1">
+                      {produto.especificacoes.map((spec) => (
+                        <li key={spec} className="font-light text-quartzo">
+                          &middot; {spec}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
               </div>
             </Reveal>
           </div>

@@ -1,1 +1,73 @@
-[]
+[
+  {
+    "codigo": "P0021",
+    "tipo": "produto",
+    "nome": "Luminaria Wave",
+    "preco": 82.61,
+    "disponibilidade": {
+      "tipo": "sob_encomenda"
+    },
+    "descricao": [
+      "Mais do que iluminar, a Luminária Wave transforma a atmosfera do ambiente.",
+      "Seu design escultural é marcado por curvas orgânicas e uma textura canelada que cria diferentes efeitos de luz e sombra ao longo da peça. Quando acesa, sua estrutura translúcida difunde uma iluminação quente e acolhedora, ideal para deixar o espaço mais confortável e sofisticado.",
+      "Produzida por meio de impressão 3D, a Wave combina tecnologia, design contemporâneo e acabamento artesanal. Seus pés escuros criam um contraste elegante com a tonalidade clara da cúpula, valorizando ainda mais sua forma marcante.",
+      "Perfeita para mesas laterais, aparadores, criados-mudos, estantes, escritórios e cantinhos de leitura, ela funciona tanto como luminária quanto como objeto de decoração.",
+      "Peça integrante da coleção Dinya Ambient 2026"
+    ],
+    "diferenciais": [
+      "Design com formas orgânicas",
+      "Textura canelada produzida em impressão 3D",
+      "Iluminação suave, quente e aconchegante",
+      "Estrutura leve e presença escultural",
+      "Ideal para quartos, salas, escritórios e ambientes de descanso",
+      "Por ser produzida em impressão 3D, cada luminária pode apresentar pequenas variações naturais de textura, características que tornam cada peça única."
+    ],
+    "imagens": [
+      "https://pub-7aaae25995dd4915b01f29ee3a67a3ba.r2.dev/produtos/P0021/cba3774bb32d49469acbef1484362167_luminaria_wave_ad_1.png",
+      "https://pub-7aaae25995dd4915b01f29ee3a67a3ba.r2.dev/produtos/P0021/783dcdd8a8c2420bb84c840abaec99d7_luminaria_wave_ad_2.png"
+    ]
+  },
+  {
+    "codigo": "P0022",
+    "tipo": "produto",
+    "nome": "Luminaria Mesh",
+    "preco": 77.91,
+    "disponibilidade": {
+      "tipo": "sob_encomenda"
+    },
+    "descricao": [
+      "A Luminária Mesh transforma a luz em parte da decoração.",
+      "Com formas orgânicas, acabamento texturizado e iluminação acolhedora, ela cria uma atmosfera elegante enquanto se destaca como uma verdadeira peça escultural no ambiente. Perfeita para mesas laterais, aparadores, quartos, salas e espaços que pedem mais personalidade.",
+      "Uma criação que une design, funcionalidade e presença em cada detalhe.",
+      "Luminária Mesh — Coleção Dinya Ambient 2026.",
+      "Entre em contato e descubra as opções disponíveis."
+    ],
+    "diferenciais": [],
+    "imagens": [
+      "https://pub-7aaae25995dd4915b01f29ee3a67a3ba.r2.dev/produtos/P0022/6a3ae5b0a34848009678b863e3496274_luminaria_mesh_ad_1.png",
+      "https://pub-7aaae25995dd4915b01f29ee3a67a3ba.r2.dev/produtos/P0022/5b40331661104d5b9dc67ffc21000c6d_luminaria_mesh_ad_2.png"
+    ]
+  },
+  {
+    "codigo": "K0001",
+    "tipo": "kit",
+    "nome": "Serenidade Sagrada",
+    "preco": 74.67,
+    "disponibilidade": {
+      "tipo": "sob_encomenda"
+    },
+    "descricao": [
+      "Encontre paz e elegância em um único espaço com este kit exclusivo que une devoção espiritual e design contemporâneo. A imagem de Nossa Senhora, com seus 17 cm de altura, apresenta um acabamento premium com manto em tons profundos de azul-marinho e um delicado toque aveludado que captura a luz com leve brilho, criando uma presença serena e contemplativa. Complementando a composição, a bandeja marmorizada em tons neutros oferece uma base sofisticada com textura granulosa que evoca a elegância da pedra natural, enquanto o porta-velas com design minimalista e acabamento premium completa a harmonia visual do conjunto. Cada elemento foi cuidadosamente pensado para criar um espaço de repouso espiritual em sua casa, quarto ou escritório—um refúgio de tranquilidade que combina funcionalidade com reverência.",
+      "Este kit é ideal para quem busca decoração com propósito, um presente significativo para pessoas queridas ou um apoio visual para momentos de oração e meditação. A composição equilibrada transforma qualquer ambiente em um pequeno santuário pessoal, irradiando calma e beleza."
+    ],
+    "diferenciais": [
+      "PLA reciclável",
+      "Imagem de Nossa Senhora: 17 cm de altura",
+      "Bandeja: 18 x 10 cm"
+    ],
+    "imagens": [
+      "https://pub-7aaae25995dd4915b01f29ee3a67a3ba.r2.dev/kits/K0001/8db08e7d5be045b49f205dfc601877e6_ChatGPT Image 18 de jul. de 2026, 23_28_20.png",
+      "https://pub-7aaae25995dd4915b01f29ee3a67a3ba.r2.dev/kits/K0001/4c88e8fb0c554489b84a692b6e437e82_ChatGPT Image 18 de jul. de 2026, 23_25_47.png"
+    ]
+  }
+]
