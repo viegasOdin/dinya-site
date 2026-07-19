@@ -45,24 +45,24 @@ export default function Contato() {
 
         <div className="mt-10 flex items-center justify-center gap-8">
           <a
-            href="https://instagram.com/dinya.3d"
+            href="https://instagram.com/dinya3d"
             target="_blank"
             rel="noopener noreferrer"
             className="flex min-h-11 items-center gap-2 text-quartzo transition-colors hover:text-cobre-text"
             aria-label="Instagram da DINYA"
           >
             <FaInstagram size={22} />
-            <span className="text-sm">@dinya.3d</span>
+            <span className="text-sm">@dinya3d</span>
           </a>
           <a
-            href="https://tiktok.com/@dinya.3d"
+            href="https://tiktok.com/@dinya3d"
             target="_blank"
             rel="noopener noreferrer"
             className="flex min-h-11 items-center gap-2 text-quartzo transition-colors hover:text-cobre-text"
             aria-label="TikTok da DINYA"
           >
             <FaTiktok size={20} />
-            <span className="text-sm">@dinya.3d</span>
+            <span className="text-sm">@dinya3d</span>
           </a>
         </div>
       </Reveal>

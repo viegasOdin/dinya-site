@@ -1,0 +1,36 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/bin/bash '/Users/vviegas/dev/dinya_site/.codex/hooks/01-secret-scanner.sh'"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/bin/bash '/Users/vviegas/dev/dinya_site/.codex/hooks/10-startup-context-loader.sh'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/bin/bash '/Users/vviegas/dev/dinya_site/.codex/hooks/03-session-end-summary.sh'"
+          }
+        ]
+      }
+    ]
+  }
+}
