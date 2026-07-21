@@ -52,3 +52,19 @@ test("hero segue o manifesto do kit revisado, mantém a animação do logo e lar
   assert.match(hero, /href="#linhas"/)
   assert.doesNotMatch(hero, /Quero algo especial/)
 })
+
+test("a seção 'As três linhas' cobre Play/Ambient/Devotion sem foto e sem texto colorido fora do padrão AA", () => {
+  const linhas = read("components/AsTresLinhas.tsx")
+  assert.match(linhas, /id="linhas"/)
+  assert.match(linhas, /Gira, monta, se diverte\./)
+  assert.match(linhas, /Luz que desenha sombra\./)
+  assert.match(linhas, /Guarda o que se ama\./)
+  assert.match(linhas, /text-quartzo/)
+  assert.doesNotMatch(linhas, /text-play-coral/)
+  assert.doesNotMatch(linhas, /text-devotion-blue/)
+  assert.doesNotMatch(linhas, /<img/)
+})
+
+test("homepage inclui 'As três linhas' entre o Hero e Brindes Corporativos", () => {
+  assert.match(read("app/page.tsx"), /AsTresLinhas/)
+})

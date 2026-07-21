@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
+import AsTresLinhas from "@/components/AsTresLinhas"
 import Corporativo from "@/components/Corporativo"
 import DestaquesProdutos from "@/components/DestaquesProdutos"
 import OQueFazemos from "@/components/OQueFazemos"
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <main id="conteudo">
         <Hero />
+        <AsTresLinhas />
         <Corporativo />
         <DestaquesProdutos />
         <OQueFazemos />
