@@ -121,3 +121,35 @@ test("contato tem um único botão de WhatsApp e footer não menciona 'Soluçõe
   const footer = read("components/Footer.tsx")
   assert.doesNotMatch(footer, /Soluções Criativas/)
 })
+
+test("conta do cliente: layout monta o provedor de sessão por cima do carrinho", () => {
+  const layout = read("app/layout.tsx")
+  assert.match(layout, /AuthClienteProvider/)
+  assert.match(layout, /<AuthClienteProvider>\s*<CarrinhoProvider>/)
+})
+
+test("conta do cliente: páginas de login, cadastro e conta existem e usam o hook de sessão", () => {
+  assert.match(read("app/conta/login/page.tsx"), /useAuthCliente/)
+  assert.match(read("app/conta/cadastro/page.tsx"), /useAuthCliente/)
+  assert.match(read("app/conta/page.tsx"), /useAuthCliente/)
+  assert.match(read("app/conta/cadastro/page.tsx"), /endereco/)
+})
+
+test("conta do cliente: navbar ganha ícone de conta ao lado do carrinho", () => {
+  const navbar = read("components/Navbar.tsx")
+  assert.match(navbar, /useAuthCliente/)
+  assert.match(navbar, /href="\/conta"/)
+})
+
+test("carrinho: sincroniza com a conta do cliente (mesclar ao logar, refletir add/remove)", () => {
+  const carrinho = read("lib/carrinho.tsx")
+  assert.match(carrinho, /useAuthCliente/)
+  assert.match(carrinho, /mesclarCarrinho/)
+  assert.match(carrinho, /adicionarAoCarrinho/)
+  assert.match(carrinho, /removerDoCarrinho/)
+  assert.match(carrinho, /codigoErp/)
+})
+
+test("api-cliente: usa NEXT_PUBLIC_DINYA_API_URL (client-side, precisa do prefixo pro build estático)", () => {
+  assert.match(read("lib/api-cliente.ts"), /NEXT_PUBLIC_DINYA_API_URL/)
+})

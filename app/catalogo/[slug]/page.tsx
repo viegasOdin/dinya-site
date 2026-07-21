@@ -73,7 +73,11 @@ export default function ProdutoPage({ params }: { params: { slug: string } }) {
                     <FaWhatsapp size={18} />
                     Comprar pelo WhatsApp
                   </a>
-                  <AdicionarAoCarrinho slug={params.slug} nome={produto.nome} />
+                  <AdicionarAoCarrinho
+                    slug={params.slug}
+                    nome={produto.nome}
+                    codigoErp={produto.codigoErp}
+                  />
                 </div>
               </div>
 

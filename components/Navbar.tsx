@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from "react"
 import { usePathname } from "next/navigation"
 import { AnimatePresence, MotionConfig, motion } from "motion/react"
-import { FaShoppingBag, FaWhatsapp } from "react-icons/fa"
+import { FaRegUser, FaShoppingBag, FaWhatsapp } from "react-icons/fa"
 import { useCarrinho } from "@/lib/carrinho"
+import { useAuthCliente } from "@/lib/auth-cliente"
 import { waCarrinho } from "@/lib/whatsapp"
 import Logo from "./Logo"
 
@@ -24,6 +25,7 @@ const todosLinksMobile = [
   { label: "Catálogo", href: "/catalogo" },
   ...linksCatalogo,
   ...linksPrincipais,
+  { label: "Minha conta", href: "/conta" },
 ]
 
 export default function Navbar() {
@@ -34,6 +36,7 @@ export default function Navbar() {
   const carrinhoRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
   const { itens, remover } = useCarrinho()
+  const { cliente } = useAuthCliente()
 
   const handleClick = () => {
     setOpen(false)
@@ -153,6 +156,15 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+
+        {/* Conta */}
+        <a
+          href="/conta"
+          aria-label={cliente ? `Minha conta — ${cliente.nome}` : "Entrar ou criar conta"}
+          className="flex min-h-11 min-w-11 items-center justify-center text-carvao transition-colors hover:text-cobre-text"
+        >
+          <FaRegUser size={18} />
+        </a>
 
         {/* Carrinho */}
         <div ref={carrinhoRef} className="relative">

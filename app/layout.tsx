@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Cormorant_Garamond, DM_Sans } from "next/font/google"
 import { CarrinhoProvider } from "@/lib/carrinho"
+import { AuthClienteProvider } from "@/lib/auth-cliente"
 import "./globals.css"
 
 const cormorant = Cormorant_Garamond({
@@ -45,7 +46,9 @@ export default function RootLayout({
         >
           Pular para o conteúdo
         </a>
-        <CarrinhoProvider>{children}</CarrinhoProvider>
+        <AuthClienteProvider>
+          <CarrinhoProvider>{children}</CarrinhoProvider>
+        </AuthClienteProvider>
       </body>
     </html>
   )
