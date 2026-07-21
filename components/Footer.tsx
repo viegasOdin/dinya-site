@@ -15,9 +15,6 @@ export default function Footer() {
         <div className="flex flex-col gap-8 md:flex-row md:justify-between">
           <div>
             <Logo dark />
-            <p className="mt-2 font-light text-blush">
-              Solu&ccedil;&otilde;es Criativas &middot; Atibaia
-            </p>
           </div>
 
           <div className="flex flex-wrap gap-x-10 gap-y-4">
@@ -35,7 +32,7 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-[#4A4340] pt-8 text-center">
           <p className="text-center text-xs font-light text-blush">
-            &copy; 2026 DINYA Solu&ccedil;&otilde;es Criativas. Todos os direitos reservados.
+            &copy; 2026 DINYA. Todos os direitos reservados.
           </p>
         </div>
       </div>

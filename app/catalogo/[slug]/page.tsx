@@ -8,6 +8,7 @@ import Footer from "@/components/Footer"
 import WhatsAppFloat from "@/components/WhatsAppFloat"
 import Reveal from "@/components/Reveal"
 import ProdutoGaleria from "@/components/ProdutoGaleria"
+import AdicionarAoCarrinho from "@/components/AdicionarAoCarrinho"
 
 export function generateStaticParams() {
   return produtos.map((produto) => ({ slug: slugify(produto.nome) }))
@@ -40,21 +41,40 @@ export default function ProdutoPage({ params }: { params: { slug: string } }) {
 
               <div className="mt-6 md:col-start-2 md:row-start-2">
                 <div className="rounded bg-linho p-4">
-                  <p className="font-medium text-carvao">Preço e prazo sob consulta</p>
-                  <p className="mt-1 text-sm font-light leading-relaxed text-quartzo">
-                    Produção sob demanda. Consulte personalização e entrega no atendimento.
-                  </p>
+                  {produto.preco ? (
+                    <>
+                      <p className="font-medium text-carvao">
+                        {new Intl.NumberFormat("pt-BR", {
+                          style: "currency",
+                          currency: "BRL",
+                        }).format(produto.preco)}
+                      </p>
+                      <p className="mt-1 text-sm font-light leading-relaxed text-quartzo">
+                        Produção sob demanda. Consulte personalização e entrega no atendimento.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="font-medium text-carvao">Preço e prazo sob consulta</p>
+                      <p className="mt-1 text-sm font-light leading-relaxed text-quartzo">
+                        Produção sob demanda. Consulte personalização e entrega no atendimento.
+                      </p>
+                    </>
+                  )}
                 </div>
 
-                <a
-                  href={waProduto(produto.nome)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded bg-cobre-text px-8 py-3 text-sm font-medium uppercase tracking-widest text-linho transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#684436] motion-reduce:transform-none motion-reduce:transition-none"
-                >
-                  <FaWhatsapp size={18} />
-                  Comprar pelo WhatsApp
-                </a>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <a
+                    href={waProduto(produto.nome)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded bg-cobre-text px-8 py-3 text-sm font-medium uppercase tracking-widest text-linho transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#684436] motion-reduce:transform-none motion-reduce:transition-none"
+                  >
+                    <FaWhatsapp size={18} />
+                    Comprar pelo WhatsApp
+                  </a>
+                  <AdicionarAoCarrinho slug={params.slug} nome={produto.nome} />
+                </div>
               </div>
 
               <div className="mt-8 md:col-start-1 md:row-span-3 md:row-start-1 md:mt-0">

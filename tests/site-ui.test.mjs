@@ -19,7 +19,9 @@ test("a navegação identifica a rota ativa e mantém alvos móveis de 44 px", (
 })
 
 test("a homepage apresenta produtos reais e a foto real da equipe", () => {
-  assert.match(read("app/page.tsx"), /DestaquesProdutos/)
+  const corporativo = read("components/Corporativo.tsx")
+  assert.match(corporativo, /ProdutoCard/)
+  assert.match(corporativo, /Ver catálogo completo/)
   assert.match(read("components/QuemSomos.tsx"), /equipe-dinya\.jpg/)
 })
 
@@ -53,7 +55,7 @@ test("hero segue o manifesto do kit revisado, mantém a animação do logo e lar
   assert.doesNotMatch(hero, /Quero algo especial/)
 })
 
-test("a seção 'As três linhas' cobre Play/Ambient/Devotion sem foto e sem texto colorido fora do padrão AA", () => {
+test("a seção 'As três linhas' cobre Play/Ambient/Devotion, sem texto colorido fora do padrão AA, com destaque lateral de peças", () => {
   const linhas = read("components/AsTresLinhas.tsx")
   assert.match(linhas, /id="linhas"/)
   assert.match(linhas, /Gira, monta, se diverte\./)
@@ -63,22 +65,59 @@ test("a seção 'As três linhas' cobre Play/Ambient/Devotion sem foto e sem tex
   assert.doesNotMatch(linhas, /text-play-coral/)
   assert.doesNotMatch(linhas, /text-devotion-blue/)
   assert.doesNotMatch(linhas, /text-cobre-deep/)
-  assert.doesNotMatch(linhas, /<img/)
+  assert.match(linhas, /produtos\.filter/)
+  assert.match(linhas, /slice\(0, 3\)/)
+  assert.match(linhas, /chegando em breve/)
 })
 
 test("homepage inclui 'As três linhas' entre o Hero e Brindes Corporativos", () => {
   assert.match(read("app/page.tsx"), /AsTresLinhas/)
 })
 
-test("navbar: Play/Ambient/Devotion no nível principal, 'Dinya' vira dropdown por clique", () => {
+test("navbar: Catálogo (dropdown com Ambient/Devotion/Play/Brindes Corporativos), Quem somos e Contato no nível principal", () => {
   const navbar = read("components/Navbar.tsx")
-  assert.match(navbar, /label: "Play"/)
   assert.match(navbar, /label: "Ambient"/)
   assert.match(navbar, /label: "Devotion"/)
-  assert.match(navbar, /Dinya/)
+  assert.match(navbar, /label: "Play"/)
+  assert.match(navbar, /label: "Brindes Corporativos"/)
+  assert.match(navbar, /label: "Quem somos"/)
+  assert.match(navbar, /label: "Contato"/)
+  assert.match(navbar, />\s*Catálogo\s*</)
   assert.match(navbar, /aria-haspopup="true"/)
-  assert.match(navbar, /aria-expanded=\{dinyaOpen\}/)
+  assert.match(navbar, /aria-expanded=\{catalogoOpen\}/)
   assert.match(navbar, /usePathname/)
   assert.match(navbar, /aria-current=/)
   assert.match(navbar, /min-h-11 min-w-11/)
+})
+
+test("navbar: carrinho com contador e checkout por WhatsApp", () => {
+  const navbar = read("components/Navbar.tsx")
+  assert.match(navbar, /useCarrinho/)
+  assert.match(navbar, /waCarrinho/)
+  assert.match(navbar, /Finalizar pelo WhatsApp/)
+})
+
+test("carrinho: contexto persiste em localStorage e produto oferece 'Adicionar ao carrinho'", () => {
+  const carrinho = read("lib/carrinho.tsx")
+  assert.match(carrinho, /localStorage/)
+  assert.match(carrinho, /CarrinhoProvider/)
+  const botao = read("components/AdicionarAoCarrinho.tsx")
+  assert.match(botao, /Adicionar ao carrinho/)
+  assert.match(read("app/catalogo/[slug]/page.tsx"), /AdicionarAoCarrinho/)
+})
+
+test("página de produto exibe preço real quando disponível, mantendo o fallback", () => {
+  const pagina = read("app/catalogo/[slug]/page.tsx")
+  assert.match(pagina, /produto\.preco/)
+  assert.match(pagina, /Preço e prazo sob consulta/)
+})
+
+test("contato tem um único botão de WhatsApp e footer não menciona 'Soluções Criativas'", () => {
+  const contato = read("components/Contato.tsx")
+  assert.doesNotMatch(contato, /WhatsApp — Empresas/)
+  assert.doesNotMatch(contato, /WhatsApp — Pessoas/)
+  assert.match(contato, />\s*WhatsApp\s*</)
+
+  const footer = read("components/Footer.tsx")
+  assert.doesNotMatch(footer, /Soluções Criativas/)
 })

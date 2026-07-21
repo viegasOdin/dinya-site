@@ -12,3 +12,8 @@ export const waProduto = (nome: string) =>
   `https://wa.me/${NUMERO}?text=${encodeURIComponent(
     `Olá, vim do site e gostei do produto ${nome}.`
   )}`
+
+export const waCarrinho = (nomes: string[]) =>
+  `https://wa.me/${NUMERO}?text=${encodeURIComponent(
+    `Olá, vim do site e gostaria de comprar:\n- ${nomes.join("\n- ")}`
+  )}`

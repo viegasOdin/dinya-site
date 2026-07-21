@@ -1,5 +1,5 @@
 import { FaWhatsapp, FaInstagram, FaTiktok } from "react-icons/fa"
-import { WA_EMPRESA, WA_PESSOAL } from "@/lib/whatsapp"
+import { WA_EMPRESA } from "@/lib/whatsapp"
 import Reveal from "./Reveal"
 
 export default function Contato() {
@@ -13,7 +13,7 @@ export default function Contato() {
           Vamos criar juntos
         </h2>
 
-        <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <div className="mt-10 flex justify-center">
           <a
             href={WA_EMPRESA}
             target="_blank"
@@ -21,16 +21,7 @@ export default function Contato() {
             className="inline-flex min-h-11 items-center gap-2 rounded bg-cobre-text px-8 py-3 text-sm font-medium uppercase tracking-widest text-linho transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#684436] motion-reduce:transform-none motion-reduce:transition-none"
           >
             <FaWhatsapp size={18} />
-            WhatsApp — Empresas
-          </a>
-          <a
-            href={WA_PESSOAL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center gap-2 rounded border border-cobre-text bg-transparent px-8 py-3 text-sm font-medium uppercase tracking-widest text-carvao transition-all duration-200 hover:-translate-y-0.5 hover:bg-blush motion-reduce:transform-none motion-reduce:transition-none"
-          >
-            <FaWhatsapp size={18} />
-            WhatsApp — Pessoas
+            WhatsApp
           </a>
         </div>
 

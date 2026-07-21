@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, type MouseEvent } from "react"
 import Link from "next/link"
 import { slugify, type Produto } from "@/lib/produtos"
 import LogoIcon from "./LogoIcon"
@@ -10,17 +10,21 @@ export default function ProdutoCard({ produto }: { produto: Produto }) {
   const imagens = produto.imagens ?? []
   const slug = slugify(produto.nome)
 
-  const proximaImagem = () => setIndice((i) => (i + 1) % imagens.length)
+  const proximaImagem = (e: MouseEvent) => {
+    e.preventDefault()
+    setIndice((i) => (i + 1) % imagens.length)
+  }
 
   return (
-    <div className="flex h-full flex-col rounded bg-blush p-6">
+    <div className="relative flex h-full flex-col rounded bg-blush p-6">
+      <Link
+        href={`/catalogo/${slug}`}
+        className="absolute inset-0 z-0 rounded"
+        aria-label={produto.nome}
+      />
+
       {imagens.length > 0 ? (
-        <button
-          type="button"
-          onClick={proximaImagem}
-          className="relative aspect-square w-full overflow-hidden rounded"
-          aria-label={imagens.length > 1 ? "Ver próxima foto" : produto.nome}
-        >
+        <div className="relative z-10 aspect-square w-full overflow-hidden rounded pointer-events-none">
           <img
             src={imagens[indice]}
             alt={produto.nome}
@@ -29,29 +33,33 @@ export default function ProdutoCard({ produto }: { produto: Produto }) {
             className="h-full w-full object-cover"
           />
           {imagens.length > 1 && (
-            <span className="absolute bottom-2 right-2 rounded bg-carvao/70 px-2 py-1 text-xs text-linho">
+            <button
+              type="button"
+              onClick={proximaImagem}
+              className="pointer-events-auto absolute bottom-2 right-2 rounded bg-carvao/70 px-2 py-1 text-xs text-linho"
+              aria-label="Ver próxima foto"
+            >
               {indice + 1}/{imagens.length}
-            </span>
+            </button>
           )}
-        </button>
+        </div>
       ) : (
-        <div className="flex aspect-square w-full items-center justify-center rounded bg-linho">
+        <div className="relative z-10 flex aspect-square w-full items-center justify-center rounded bg-linho pointer-events-none">
           <LogoIcon className="h-16 w-auto text-cobre" />
         </div>
       )}
 
-      <h3 className="font-display mt-6 text-xl text-carvao">{produto.nome}</h3>
+      <h3 className="font-display relative z-10 mt-6 text-xl text-carvao pointer-events-none">
+        {produto.nome}
+      </h3>
 
-      <p className="mt-2 line-clamp-3 font-light leading-relaxed text-quartzo">
+      <p className="relative z-10 mt-2 line-clamp-3 font-light leading-relaxed text-quartzo pointer-events-none">
         {produto.descricao[0]}
       </p>
 
-      <Link
-        href={`/catalogo/${slug}`}
-        className="mt-2 inline-flex min-h-11 items-center text-sm font-medium text-cobre-text underline-offset-2 hover:underline"
-      >
+      <span className="relative z-10 mt-2 inline-flex min-h-11 items-center text-sm font-medium text-cobre-text pointer-events-none">
         Ver mais
-      </Link>
+      </span>
     </div>
   )
 }

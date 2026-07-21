@@ -39,7 +39,7 @@ export default function Hero() {
               href="#linhas"
               className="inline-flex min-h-11 items-center rounded border border-cobre-text bg-transparent px-8 py-3 text-sm font-medium uppercase tracking-widest text-carvao transition-all duration-200 hover:-translate-y-0.5 hover:bg-blush motion-reduce:transform-none motion-reduce:transition-none"
             >
-              Ver as três linhas
+              Conheça nossas linhas
             </a>
           </div>
         </Reveal>

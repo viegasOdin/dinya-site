@@ -1,5 +1,7 @@
 import catalogoErpGerado from "./catalogo-erp.gerado.json"
 
+export type Linha = "play" | "ambient" | "devotion"
+
 export interface Produto {
   nome: string
   imagens?: string[]
@@ -10,9 +12,12 @@ export interface Produto {
   // produto nunca é atualizado pela sincronização, fica só manual
   codigoErp?: string
   // preenchidos só quando o produto vem (ou está vinculado) ao dinya-app;
-  // ainda sem uso na UI — disponíveis pra quando o preço for exibido no site
   preco?: number
   disponibilidade?: Disponibilidade
+  // linha de produto (Play/Ambient/Devotion) — usada pra popular o destaque
+  // lateral da seção "As três linhas" na home. Ainda não preenchido pelo ERP
+  // hoje (ver memory/decisions/), então fica undefined até lá.
+  linha?: Linha
 }
 
 export type Disponibilidade = { tipo: "sob_encomenda" } | { tipo: "estoque"; pecas: number | null }
@@ -26,6 +31,7 @@ export interface ItemCatalogoErp {
   descricao: string[]
   diferenciais: string[]
   imagens: string[]
+  linha?: Linha
 }
 
 const DIACRITICOS = /[̀-ͯ]/g
@@ -67,6 +73,7 @@ export function mesclarComErp(manuais: Produto[], itensErp: ItemCatalogoErp[]): 
       imagens: item.imagens.length > 0 ? item.imagens : produto.imagens,
       preco: item.preco,
       disponibilidade: item.disponibilidade,
+      linha: item.linha,
     }
   })
 
@@ -81,6 +88,7 @@ export function mesclarComErp(manuais: Produto[], itensErp: ItemCatalogoErp[]): 
       especificacoes: [],
       preco: item.preco,
       disponibilidade: item.disponibilidade,
+      linha: item.linha,
     }))
 
   return [...mesclados, ...novos]

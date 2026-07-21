@@ -1,5 +1,8 @@
+import Link from "next/link"
 import { FaWhatsapp } from "react-icons/fa"
 import { WA_EMPRESA } from "@/lib/whatsapp"
+import { produtos } from "@/lib/produtos"
+import ProdutoCard from "./ProdutoCard"
 import Reveal from "./Reveal"
 
 const cards = [
@@ -47,6 +50,27 @@ export default function Corporativo() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.2}>
+          <p className="mt-16 max-w-2xl font-light leading-relaxed text-quartzo">
+            Produtos reais, impressos sob demanda e adaptáveis a sua marca.
+          </p>
+        </Reveal>
+
+        <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {produtos.slice(0, 3).map((produto, index) => (
+            <Reveal key={produto.nome} delay={index * 0.05} className="h-full">
+              <ProdutoCard produto={produto} />
+            </Reveal>
+          ))}
+        </div>
+
+        <Link
+          href="/catalogo"
+          className="mt-10 inline-flex min-h-11 items-center text-sm font-medium uppercase tracking-widest text-cobre-text underline-offset-4 hover:underline"
+        >
+          Ver catálogo completo
+        </Link>
 
         <Reveal delay={0.2}>
           <div className="mt-12">
