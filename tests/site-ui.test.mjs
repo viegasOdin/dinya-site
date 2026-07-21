@@ -43,3 +43,12 @@ test("tokens do design system revisado somam play-coral e devotion-blue sem alte
   assert.match(config, /"devotion-blue":\s*"#3E5C76"/)
   assert.match(config, /quartzo:\s*"#6B6059"/)
 })
+
+test("hero segue o manifesto do kit revisado, mantém a animação do logo e larga o CTA pessoal", () => {
+  const hero = read("components/Hero.tsx")
+  assert.match(hero, /PrintedLogo/)
+  assert.match(hero, /O que ainda não tem forma, a gente cria\./)
+  assert.match(hero, /href="#corporativo"/)
+  assert.match(hero, /href="#linhas"/)
+  assert.doesNotMatch(hero, /Quero algo especial/)
+})
