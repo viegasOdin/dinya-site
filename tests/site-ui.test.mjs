@@ -68,3 +68,16 @@ test("a seção 'As três linhas' cobre Play/Ambient/Devotion sem foto e sem tex
 test("homepage inclui 'As três linhas' entre o Hero e Brindes Corporativos", () => {
   assert.match(read("app/page.tsx"), /AsTresLinhas/)
 })
+
+test("navbar: Play/Ambient/Devotion no nível principal, 'Dinya' vira dropdown por clique", () => {
+  const navbar = read("components/Navbar.tsx")
+  assert.match(navbar, /label: "Play"/)
+  assert.match(navbar, /label: "Ambient"/)
+  assert.match(navbar, /label: "Devotion"/)
+  assert.match(navbar, /Dinya/)
+  assert.match(navbar, /aria-haspopup="true"/)
+  assert.match(navbar, /aria-expanded=\{dinyaOpen\}/)
+  assert.match(navbar, /usePathname/)
+  assert.match(navbar, /aria-current=/)
+  assert.match(navbar, /min-h-11 min-w-11/)
+})
