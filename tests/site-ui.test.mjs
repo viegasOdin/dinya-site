@@ -36,3 +36,10 @@ test("movimento genérico e WhatsApp respeitam redução de movimento e evitam o
   assert.match(whatsapp, /IntersectionObserver/)
   assert.match(whatsapp, /contactInView/)
 })
+
+test("tokens do design system revisado somam play-coral e devotion-blue sem alterar quartzo", () => {
+  const config = read("tailwind.config.ts")
+  assert.match(config, /"play-coral":\s*"#F4502B"/)
+  assert.match(config, /"devotion-blue":\s*"#3E5C76"/)
+  assert.match(config, /quartzo:\s*"#6B6059"/)
+})
