@@ -62,6 +62,7 @@ test("a seção 'As três linhas' cobre Play/Ambient/Devotion sem foto e sem tex
   assert.match(linhas, /text-quartzo/)
   assert.doesNotMatch(linhas, /text-play-coral/)
   assert.doesNotMatch(linhas, /text-devotion-blue/)
+  assert.doesNotMatch(linhas, /text-cobre-deep/)
   assert.doesNotMatch(linhas, /<img/)
 })
 
