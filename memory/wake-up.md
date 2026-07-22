@@ -13,6 +13,16 @@ sincronizado). `npm run build`/`npm test` (19/19) limpos. Checkout de pagamento 
 "Sessão — 21:30") e `memory/decisions/2026-07-21-cadastro-login-cliente-e-carrinho-
 sincronizado.md`.
 
+> **Continuação (mesma sessão): PUBLICADO.** Usuário pediu "mescle e deploy do Dinya app e em
+> seguida publique o Dinya site". `main` publicado em `origin` (`8c2edf9`) — workflow `Deploy
+> GitHub Pages` confirmado `completed`/`success` via API do GitHub. `dinya-app` correspondente
+> mesclado (`main`/`development` em `10dc0b4`) e deployado em produção, confirmado pelo usuário
+> (sem verificação direta desta sessão — sem acesso SSH, e a rede deste ambiente bloqueia
+> inclusive `curl` pra `api.dinya.com.br`/`dinya.com.br`/`viegasodin.github.io`, só a API do
+> GitHub em si é alcançável). Cloudflare Pages (2º pipeline) não verificado. **Pendência real:**
+> confirmar visualmente em produção (fora deste ambiente) que `/conta/login` funciona de ponta a
+> ponta contra o backend real.
+
 ---
 
 **Atualizado (checkpoint anterior):** 2026-07-21 — Sessão 7 — Design System revisado implementado e publicado
@@ -42,7 +52,7 @@ sincronizado.md`.
 | Dev server fixo na porta 4000 | ✅ Concluído (usuário roda apps em paralelo, evita conflito) |
 | Design System revisado — tokens, Hero, seção "As três linhas", Navbar (spec + plano em `docs/superpowers/`) | ✅ Implementado, revisado e publicado em produção (`origin/main` @ `c8db119`) |
 | Carrinho funcional simples (localStorage, sem conta) | ✅ Implementado, ver `memory/decisions/2026-07-21-ajustes-ui-linha-preco-carrinho.md` |
-| **Cadastro/login de cliente + carrinho sincronizado entre dispositivos** | ✅ Implementado e verificado ponta a ponta local (Playwright real) — **ainda não publicado em produção** (depende do deploy do `dinya-app` correspondente) |
+| **Cadastro/login de cliente + carrinho sincronizado entre dispositivos** | ✅ Implementado, verificado ponta a ponta local (Playwright real) e **publicado** (`main` @ `8c2edf9`, GitHub Pages `completed`/`success`) — `dinya-app` correspondente também deployado (confirmado pelo usuário, sem verificação direta desta sessão) |
 
 ---
 

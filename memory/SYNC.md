@@ -1,6 +1,26 @@
 # Dinya Site — SYNC
 
-**Atualizado:** 2026-07-21 — Sessão 7
+**Atualizado:** 2026-07-21 22:00 (GMT-3) — Cadastro/login de cliente + carrinho sincronizado — PUBLICADO
+
+## Branch: main, publicada em `origin` (`8c2edf9`) — GitHub Pages `completed`/`success` confirmado via API
+
+Cadastro/login de cliente do site + carrinho sincronizado entre dispositivos (trabalho espelhado
+no `dinya-app`, repo irmão — ver decisão de mesmo nome nos dois repos). `main` publicada e
+workflow `Deploy GitHub Pages` confirmado com sucesso. `dinya-app` correspondente também mesclado
+e deployado em produção (confirmado pelo usuário, sem verificação direta — sem SSH neste
+ambiente, rede bloqueia `curl` pra `api.dinya.com.br`/`dinya.com.br`/`github.io`). Detalhe
+completo em `memory/journal/2026-07-21.md` e
+`memory/decisions/2026-07-21-cadastro-login-cliente-e-carrinho-sincronizado.md`.
+
+### Pendências
+
+1. Confirmar visualmente (fora deste ambiente) que `/conta/login` funciona contra o backend real.
+2. Confirmar Cloudflare Pages (2º pipeline) também buildou.
+3. Checkout de verdade — próxima peça real da loja virtual.
+
+---
+
+### Status anterior (Sessão 7, ainda válido como histórico)
 
 ## Branch: main — 9 commits novos, todos pushed pra `origin/main` (`f30512b..c8db119`)
 
