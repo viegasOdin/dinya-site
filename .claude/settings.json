@@ -22,17 +22,6 @@
           }
         ]
       }
-    ],
-    "Stop": [
-      {
-        "matcher": ".*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/opt/homebrew/bin/bash .claude/hooks/03-session-end-summary.sh"
-          }
-        ]
-      }
     ]
   },
   "permissions": {

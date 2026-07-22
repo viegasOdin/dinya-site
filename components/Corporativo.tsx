@@ -20,6 +20,21 @@ const cards = [
   },
 ]
 
+// exemplo de brinde corporativo — não faz parte do catálogo sincronizado do
+// ERP (produtosManuais em lib/produtos.ts fica vazio de propósito), então
+// mora aqui como um destaque só desta seção, sem página de produto própria
+const jogoDaVelha = {
+  nome: "Jogo da Velha Personalizado",
+  imagens: ["/catalogo/Jogo_da_velha_1.png", "/catalogo/Jogo_da_velha_2.png"],
+  descricao: [
+    "Um brinde que também é convite ao lazer: a sua marca fica na mesa, literalmente. 🎯",
+    "Este jogo da velha em impressão 3D vem com a caixa personalizada com a logo da empresa e peças em X e O que se guardam dentro dela — pronto para presentear clientes, parceiros ou a própria equipe.",
+    "Produzido sob encomenda, com opções de cor de caixa e peças para combinar com a identidade visual da sua marca.",
+    "✨ Caixa com sua logo impressa 🎮 Peças X e O inclusas 📦 Feito em impressão 3D 🎁 Ideal para brindes de eventos, kits de boas-vindas e parcerias corporativas",
+    "Quer um lote personalizado para a sua empresa? Solicite um orçamento.",
+  ],
+}
+
 export default function Corporativo() {
   return (
     <section id="corporativo" className="border-t border-blush bg-white px-6 py-20 md:py-28">
@@ -52,9 +67,37 @@ export default function Corporativo() {
         </div>
 
         <Reveal delay={0.2}>
-          <p className="mt-16 max-w-2xl font-light leading-relaxed text-quartzo">
+          <h3 className="font-display mt-16 text-2xl font-light text-carvao md:text-3xl">
+            Ideias que já ganharam forma
+          </h3>
+          <p className="mt-3 max-w-2xl font-light leading-relaxed text-quartzo">
             Produtos reais, impressos sob demanda e adaptáveis a sua marca.
           </p>
+        </Reveal>
+
+        <Reveal delay={0.25}>
+          <div className="mt-8 grid gap-6 rounded bg-blush p-6 md:grid-cols-2 md:p-8">
+            <div className="grid grid-cols-2 gap-3">
+              {jogoDaVelha.imagens.map((src) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt={`${jogoDaVelha.nome} — com a logo da marca impressa na caixa`}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-square w-full rounded object-cover"
+                />
+              ))}
+            </div>
+            <div>
+              <h4 className="font-display text-xl text-carvao">{jogoDaVelha.nome}</h4>
+              {jogoDaVelha.descricao.map((paragrafo) => (
+                <p key={paragrafo} className="mt-3 font-light leading-relaxed text-quartzo">
+                  {paragrafo}
+                </p>
+              ))}
+            </div>
+          </div>
         </Reveal>
 
         <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
