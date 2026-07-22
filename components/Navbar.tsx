@@ -15,14 +15,14 @@ const linksPrincipais = [
 ]
 
 const linksCatalogo = [
-  { label: "Ambient", href: "/#linhas" },
-  { label: "Devotion", href: "/#linhas" },
-  { label: "Play", href: "/#linhas" },
+  { label: "Ver todos", href: "/catalogo" },
+  { label: "Play", href: "/catalogo?linha=play" },
+  { label: "Ambient", href: "/catalogo?linha=ambient" },
+  { label: "Devotion", href: "/catalogo?linha=devotion" },
   { label: "Brindes Corporativos", href: "/#corporativo" },
 ]
 
 const todosLinksMobile = [
-  { label: "Catálogo", href: "/catalogo" },
   ...linksCatalogo,
   ...linksPrincipais,
   { label: "Minha conta", href: "/conta" },

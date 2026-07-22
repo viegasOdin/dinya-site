@@ -22,7 +22,7 @@ const cards = [
 
 export default function Corporativo() {
   return (
-    <section id="corporativo" className="bg-white px-6 py-20 md:py-28">
+    <section id="corporativo" className="border-t border-blush bg-white px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <span className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-cobre-text">

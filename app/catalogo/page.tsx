@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import Navbar from "@/components/Navbar"
 import Catalogo from "@/components/Catalogo"
 import Footer from "@/components/Footer"
@@ -8,7 +9,9 @@ export default function CatalogoPage() {
     <>
       <Navbar />
       <main id="conteudo">
-        <Catalogo />
+        <Suspense>
+          <Catalogo />
+        </Suspense>
       </main>
       <Footer />
       <WhatsAppFloat />

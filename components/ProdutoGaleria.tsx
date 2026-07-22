@@ -16,12 +16,12 @@ export default function ProdutoGaleria({ imagens, nome }: { imagens: string[]; n
 
   return (
     <div>
-      <div className="aspect-square w-full overflow-hidden rounded bg-linho">
+      <div className="w-full overflow-hidden rounded bg-linho">
         <img
           src={imagens[selecionada]}
           alt={nome}
           decoding="async"
-          className="h-full w-full object-cover"
+          className="h-auto w-full"
         />
       </div>
 

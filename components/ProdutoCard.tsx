@@ -5,7 +5,13 @@ import Link from "next/link"
 import { slugify, type Produto } from "@/lib/produtos"
 import LogoIcon from "./LogoIcon"
 
-export default function ProdutoCard({ produto }: { produto: Produto }) {
+export default function ProdutoCard({
+  produto,
+  compact = false,
+}: {
+  produto: Produto
+  compact?: boolean
+}) {
   const [indice, setIndice] = useState(0)
   const imagens = produto.imagens ?? []
   const slug = slugify(produto.nome)
@@ -16,7 +22,7 @@ export default function ProdutoCard({ produto }: { produto: Produto }) {
   }
 
   return (
-    <div className="relative flex h-full flex-col rounded bg-blush p-6">
+    <div className={`relative flex h-full flex-col rounded bg-blush ${compact ? "p-4" : "p-6"}`}>
       <Link
         href={`/catalogo/${slug}`}
         className="absolute inset-0 z-0 rounded"
@@ -32,7 +38,7 @@ export default function ProdutoCard({ produto }: { produto: Produto }) {
             decoding="async"
             className="h-full w-full object-cover"
           />
-          {imagens.length > 1 && (
+          {!compact && imagens.length > 1 && (
             <button
               type="button"
               onClick={proximaImagem}
@@ -49,17 +55,28 @@ export default function ProdutoCard({ produto }: { produto: Produto }) {
         </div>
       )}
 
-      <h3 className="font-display relative z-10 mt-6 text-xl text-carvao pointer-events-none">
+      <h3
+        className={`font-display relative z-10 text-carvao pointer-events-none ${
+          compact ? "mt-3 text-base" : "mt-6 text-xl"
+        }`}
+      >
         {produto.nome}
       </h3>
 
-      <p className="relative z-10 mt-2 line-clamp-3 font-light leading-relaxed text-quartzo pointer-events-none">
-        {produto.descricao[0]}
-      </p>
-
-      <span className="relative z-10 mt-2 inline-flex min-h-11 items-center text-sm font-medium text-cobre-text pointer-events-none">
-        Ver mais
-      </span>
+      {compact ? (
+        <span className="relative z-10 mt-1 text-xs font-medium uppercase tracking-widest text-cobre-text pointer-events-none">
+          Ver mais
+        </span>
+      ) : (
+        <>
+          <p className="relative z-10 mt-2 line-clamp-3 font-light leading-relaxed text-quartzo pointer-events-none">
+            {produto.descricao[0]}
+          </p>
+          <span className="relative z-10 mt-2 inline-flex min-h-11 items-center text-sm font-medium text-cobre-text pointer-events-none">
+            Ver mais
+          </span>
+        </>
+      )}
     </div>
   )
 }
