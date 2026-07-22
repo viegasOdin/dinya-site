@@ -76,6 +76,9 @@ export default function AsTresLinhas() {
           <h2 className="font-display mt-4 text-3xl font-light text-carvao md:text-4xl">
             Cada linha, um jeito de criar
           </h2>
+          <p className="mt-4 max-w-2xl font-light leading-relaxed text-quartzo">
+            Três formas de dar vida a peças que unem função e propósito — descubra qual conversa com você.
+          </p>
         </Reveal>
 
         <Reveal delay={0.1}>

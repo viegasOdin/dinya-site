@@ -1,8 +1,9 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import { FaWhatsapp } from "react-icons/fa"
 import { WA_EMPRESA } from "@/lib/whatsapp"
-import { produtos } from "@/lib/produtos"
-import ProdutoCard from "./ProdutoCard"
 import Reveal from "./Reveal"
 
 const cards = [
@@ -30,12 +31,20 @@ const jogoDaVelha = {
     "Um brinde que também é convite ao lazer: a sua marca fica na mesa, literalmente. 🎯",
     "Este jogo da velha em impressão 3D vem com a caixa personalizada com a logo da empresa e peças em X e O que se guardam dentro dela — pronto para presentear clientes, parceiros ou a própria equipe.",
     "Produzido sob encomenda, com opções de cor de caixa e peças para combinar com a identidade visual da sua marca.",
-    "✨ Caixa com sua logo impressa 🎮 Peças X e O inclusas 📦 Feito em impressão 3D 🎁 Ideal para brindes de eventos, kits de boas-vindas e parcerias corporativas",
-    "Quer um lote personalizado para a sua empresa? Solicite um orçamento.",
   ],
+  destaques: [
+    "✨ Caixa com sua logo impressa",
+    "🎮 Peças X e O inclusas",
+    "📦 Feito em impressão 3D",
+    "🎁 Ideal para brindes de eventos, kits de boas-vindas e parcerias corporativas",
+  ],
+  cta: "Quer um lote personalizado para a sua empresa? Solicite um orçamento.",
 }
 
 export default function Corporativo() {
+  const [indiceJogo, setIndiceJogo] = useState(0)
+  const proximaFotoJogo = () => setIndiceJogo((i) => (i + 1) % jogoDaVelha.imagens.length)
+
   return (
     <section id="corporativo" className="border-t border-blush bg-white px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
@@ -77,17 +86,24 @@ export default function Corporativo() {
 
         <Reveal delay={0.25}>
           <div className="mt-8 grid gap-6 rounded bg-blush p-6 md:grid-cols-2 md:p-8">
-            <div className="grid grid-cols-2 gap-3">
-              {jogoDaVelha.imagens.map((src) => (
-                <img
-                  key={src}
-                  src={src}
-                  alt={`${jogoDaVelha.nome} — com a logo da marca impressa na caixa`}
-                  loading="lazy"
-                  decoding="async"
-                  className="aspect-square w-full rounded object-cover"
-                />
-              ))}
+            <div className="relative aspect-square w-full overflow-hidden rounded bg-white">
+              <img
+                src={jogoDaVelha.imagens[indiceJogo]}
+                alt={`${jogoDaVelha.nome} — com a logo da marca impressa na caixa`}
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-contain p-6"
+              />
+              {jogoDaVelha.imagens.length > 1 && (
+                <button
+                  type="button"
+                  onClick={proximaFotoJogo}
+                  className="absolute bottom-2 right-2 rounded bg-carvao/70 px-2 py-1 text-xs text-linho"
+                  aria-label="Ver próxima foto"
+                >
+                  {indiceJogo + 1}/{jogoDaVelha.imagens.length}
+                </button>
+              )}
             </div>
             <div>
               <h4 className="font-display text-xl text-carvao">{jogoDaVelha.nome}</h4>
@@ -96,17 +112,17 @@ export default function Corporativo() {
                   {paragrafo}
                 </p>
               ))}
+              <ul className="mt-3 space-y-1">
+                {jogoDaVelha.destaques.map((destaque) => (
+                  <li key={destaque} className="font-light leading-relaxed text-quartzo">
+                    {destaque}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-3 font-light leading-relaxed text-quartzo">{jogoDaVelha.cta}</p>
             </div>
           </div>
         </Reveal>
-
-        <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {produtos.slice(0, 3).map((produto, index) => (
-            <Reveal key={produto.nome} delay={index * 0.05} className="h-full">
-              <ProdutoCard produto={produto} />
-            </Reveal>
-          ))}
-        </div>
 
         <Link
           href="/catalogo"

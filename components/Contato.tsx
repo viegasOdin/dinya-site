@@ -12,6 +12,9 @@ export default function Contato() {
         <h2 className="font-display mt-4 text-3xl font-light text-carvao md:text-4xl">
           Vamos criar juntos
         </h2>
+        <p className="mx-auto mt-4 max-w-xl font-light leading-relaxed text-quartzo">
+          Conta pra gente sua ideia — o resto a impressão 3D resolve.
+        </p>
 
         <div className="mt-10 flex justify-center">
           <a

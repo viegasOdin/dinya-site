@@ -61,6 +61,9 @@ export default function OQueFazemos() {
           <h2 className="font-display mt-4 text-3xl font-light text-carvao md:text-4xl">
             Do problema à solução — com forma e precisão
           </h2>
+          <p className="mt-4 max-w-2xl font-light leading-relaxed text-quartzo">
+            Cada peça nasce de uma necessidade real, não de um catálogo pronto.
+          </p>
         </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
