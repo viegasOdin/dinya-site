@@ -22,7 +22,6 @@ const linksCatalogo = [
   { label: "Pet", href: "/catalogo?linha=pet" },
   { label: "Connect", href: "/catalogo?linha=connect" },
   { label: "Daily", href: "/catalogo?linha=daily" },
-  { label: "Brindes Corporativos", href: "/#corporativo" },
 ]
 
 const todosLinksMobile = [

@@ -2,7 +2,7 @@ import Logo from "./Logo"
 
 const links = [
   { label: "O que fazemos", href: "/#o-que-fazemos" },
-  { label: "Brindes Corporativos", href: "/#corporativo" },
+  { label: "Dinya Connect", href: "/#corporativo" },
   { label: "Catálogo", href: "/catalogo" },
   { label: "Quem somos", href: "/#quem-somos" },
   { label: "Contato", href: "/#contato" },

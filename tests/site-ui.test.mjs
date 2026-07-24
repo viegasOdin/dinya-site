@@ -77,11 +77,11 @@ test("a seção 'Nossas linhas' cobre Play/Ambient/Devotion/Pet/Connect/Daily, s
   assert.match(linhas, /chegando em breve/)
 })
 
-test("homepage inclui 'As três linhas' entre o Hero e Brindes Corporativos", () => {
+test("homepage inclui 'As três linhas' entre o Hero e Dinya Connect", () => {
   assert.match(read("app/page.tsx"), /AsTresLinhas/)
 })
 
-test("navbar: Catálogo (dropdown com Ambient/Devotion/Play/Pet/Connect/Daily/Brindes Corporativos), Quem somos e Contato no nível principal", () => {
+test("navbar: Catálogo (dropdown com Ambient/Devotion/Play/Pet/Connect/Daily, sem Dinya Connect), Quem somos e Contato no nível principal", () => {
   const navbar = read("components/Navbar.tsx")
   assert.match(navbar, /label: "Ambient"/)
   assert.match(navbar, /label: "Devotion"/)
@@ -89,7 +89,8 @@ test("navbar: Catálogo (dropdown com Ambient/Devotion/Play/Pet/Connect/Daily/Br
   assert.match(navbar, /label: "Pet"/)
   assert.match(navbar, /label: "Connect"/)
   assert.match(navbar, /label: "Daily"/)
-  assert.match(navbar, /label: "Brindes Corporativos"/)
+  assert.doesNotMatch(navbar, /label: "Brindes Corporativos"/)
+  assert.doesNotMatch(navbar, /label: "Dinya Connect"/)
   assert.match(navbar, /label: "Quem somos"/)
   assert.match(navbar, /label: "Contato"/)
   assert.match(navbar, />\s*Catálogo\s*</)

@@ -50,7 +50,7 @@ export default function Corporativo() {
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <span className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-cobre-text">
-            BRINDES CORPORATIVOS
+            DINYA CONNECT
           </span>
           <h2 className="font-display mt-4 text-3xl font-light text-carvao md:text-4xl">
             Brindes sob medida para a sua empresa

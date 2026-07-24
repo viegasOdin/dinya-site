@@ -33,7 +33,7 @@ export default function Hero() {
               href="#corporativo"
               className="inline-flex min-h-11 items-center rounded bg-cobre-text px-8 py-3 text-sm font-medium uppercase tracking-widest text-linho transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#684436] motion-reduce:transform-none motion-reduce:transition-none"
             >
-              Brindes Corporativos
+              Dinya Connect
             </a>
             <a
               href="#linhas"
