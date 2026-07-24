@@ -1,5 +1,28 @@
 # Dinya Site — SYNC
 
+**Atualizado:** 2026-07-23 (GMT-3) — Sessão 9 — Seis linhas, fix de preço no ERP, rename Dinya Connect — PUBLICADO
+
+## Branch: main, dois pushes nesta sessão — `a305813` (seis linhas) e `71f63b0` (rename Dinya Connect) — ambos GitHub Pages `completed`/`success` confirmado via API
+
+Três brand kits novos (Pet/Connect/Daily) somados às 3 linhas existentes em "Nossas linhas",
+navbar e filtro do catálogo (`a305813`). Bug real de preço achado e corrigido no `dinya-app` (repo
+irmão): `/public/catalogo` mandava `preco_ecommerce` (sugerido), não `valor_praticado` — já
+commitado/pushed lá por trabalho concorrente (`0e5d1f7`), não verificado com testes rodando 100%
+verde por causa de uma feature não relacionada ("exige foto pra `disponivel_site`") ainda
+instável nesse repo. "Brindes Corporativos" renomeado pra "Dinya Connect" e removido do dropdown
+do Catálogo (`71f63b0`). Detalhe completo em `memory/journal/2026-07-23.md` e
+`memory/decisions/2026-07-23-linhas-pet-connect-daily-e-preco-praticado.md`.
+
+### Pendências
+
+1. Confirmar visualmente em produção (fora deste ambiente) as 3 linhas novas, "Dinya Connect" e o preço praticado.
+2. `dinya-app`: rodar `pytest tests/test_api_public.py` de novo quando a feature "exige foto" estabilizar (15/19 falhavam por causa dela nesta sessão, não do fix de preço).
+3. Cadastrar produtos reais com `linha`=pet/connect/daily no admin do ERP (as 3 abas novas mostram "chegando em breve" até lá).
+
+---
+
+### Status anterior (Sessão 8, ainda válido como histórico)
+
 **Atualizado:** 2026-07-21 22:00 (GMT-3) — Cadastro/login de cliente + carrinho sincronizado — PUBLICADO
 
 ## Branch: main, publicada em `origin` (`8c2edf9`) — GitHub Pages `completed`/`success` confirmado via API
@@ -12,7 +35,7 @@ ambiente, rede bloqueia `curl` pra `api.dinya.com.br`/`dinya.com.br`/`github.io`
 completo em `memory/journal/2026-07-21.md` e
 `memory/decisions/2026-07-21-cadastro-login-cliente-e-carrinho-sincronizado.md`.
 
-### Pendências
+**Pendências (histórico):**
 
 1. Confirmar visualmente (fora deste ambiente) que `/conta/login` funciona contra o backend real.
 2. Confirmar Cloudflare Pages (2º pipeline) também buildou.
@@ -66,6 +89,12 @@ browser. Push feito, deploy automático (GitHub Pages Actions) disparado. Ver
 
 | Hash | Descrição |
 |------|-----------|
+| `71f63b0` | rename: "Brindes Corporativos" vira "Dinya Connect" e sai do dropdown do Catálogo |
+| `a305813` | feat: adiciona linhas Pet, Connect e Daily à seção "Nossas linhas" e navbar |
+| `0fdb9a5` | fix: galeria do jogo da velha, remove vitrine duplicada e completa seções vazias |
+| `908bdfc` | feat: destaque de jogo da velha personalizado em Brindes Corporativos |
+| `285e869` | feat: filtro de linha no catálogo, cards compactos e imagem em tamanho original |
+| `8c2edf9` | feat: cadastro/login de cliente + carrinho sincronizado entre dispositivos |
 | `c8db119` | test: fecha guard de acessibilidade pra text-cobre-deep em AsTresLinhas |
 | `61dc1c8` | feat: reestrutura a navbar com Play/Ambient/Devotion e dropdown Dinya |
 | `c2fe542` | feat: adiciona seção 'As três linhas' (Play/Ambient/Devotion) na home |
