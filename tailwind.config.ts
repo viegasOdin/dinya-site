@@ -20,11 +20,14 @@ const config: Config = {
         // (#8A7E79) cai pra 3.49:1 de contraste contra linho, abaixo do piso AA (4.5:1) que
         // quartzo precisa como cor de texto de corpo. Ver docs/superpowers/specs/2026-07-20-design-system-sync-design.md
         quartzo: "#6B6059",
-        // accents das linhas Play e Devotion — só esses dois têm uso real hoje
-        // (Ambient reaproveita cobre-deep, ver AsTresLinhas.tsx). Resto da paleta do kit
-        // (play-teal, play-sun, ambient-pitch, devotion-blue-light) fica de fora até ter uso.
+        // accents das linhas — Ambient e Daily reaproveitam cobre-deep (Daily não
+        // adiciona cor nova por decisão do brand kit), ver AsTresLinhas.tsx. Resto
+        // da paleta dos kits (play-teal, play-sun, ambient-pitch, devotion-blue-light,
+        // connect-ardosia/névoa/nuvem) fica de fora até ter uso.
         "play-coral": "#F4502B",
         "devotion-blue": "#3E5C76",
+        "pet-salvia": "#57776C",
+        "connect-grafite": "#303538",
       },
     },
   },

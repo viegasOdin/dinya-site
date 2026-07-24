@@ -10,6 +10,9 @@ const FILTROS: { id: Linha; nome: string }[] = [
   { id: "play", nome: "Play" },
   { id: "ambient", nome: "Ambient" },
   { id: "devotion", nome: "Devotion" },
+  { id: "pet", nome: "Pet" },
+  { id: "connect", nome: "Connect" },
+  { id: "daily", nome: "Daily" },
 ]
 
 export default function Catalogo() {

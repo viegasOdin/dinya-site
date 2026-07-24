@@ -19,6 +19,9 @@ const linksCatalogo = [
   { label: "Play", href: "/catalogo?linha=play" },
   { label: "Ambient", href: "/catalogo?linha=ambient" },
   { label: "Devotion", href: "/catalogo?linha=devotion" },
+  { label: "Pet", href: "/catalogo?linha=pet" },
+  { label: "Connect", href: "/catalogo?linha=connect" },
+  { label: "Daily", href: "/catalogo?linha=daily" },
   { label: "Brindes Corporativos", href: "/#corporativo" },
 ]
 

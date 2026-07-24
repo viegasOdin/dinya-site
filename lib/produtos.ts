@@ -1,6 +1,6 @@
 import catalogoErpGerado from "./catalogo-erp.gerado.json"
 
-export type Linha = "play" | "ambient" | "devotion"
+export type Linha = "play" | "ambient" | "devotion" | "pet" | "connect" | "daily"
 
 export interface Produto {
   nome: string
@@ -14,7 +14,7 @@ export interface Produto {
   // preenchidos só quando o produto vem (ou está vinculado) ao dinya-app;
   preco?: number
   disponibilidade?: Disponibilidade
-  // linha de produto (Play/Ambient/Devotion) — usada pra popular o destaque
+  // linha de produto (Play/Ambient/Devotion/Pet/Connect/Daily) — usada pra popular o destaque
   // lateral da seção "As três linhas" na home. Ainda não preenchido pelo ERP
   // hoje (ver memory/decisions/), então fica undefined até lá.
   linha?: Linha

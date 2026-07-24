@@ -39,10 +39,12 @@ test("movimento genérico e WhatsApp respeitam redução de movimento e evitam o
   assert.match(whatsapp, /contactInView/)
 })
 
-test("tokens do design system revisado somam play-coral e devotion-blue sem alterar quartzo", () => {
+test("tokens do design system revisado somam play-coral, devotion-blue, pet-salvia e connect-grafite sem alterar quartzo", () => {
   const config = read("tailwind.config.ts")
   assert.match(config, /"play-coral":\s*"#F4502B"/)
   assert.match(config, /"devotion-blue":\s*"#3E5C76"/)
+  assert.match(config, /"pet-salvia":\s*"#57776C"/)
+  assert.match(config, /"connect-grafite":\s*"#303538"/)
   assert.match(config, /quartzo:\s*"#6B6059"/)
 })
 
@@ -55,16 +57,21 @@ test("hero segue o manifesto do kit revisado, mantém a animação do logo e lar
   assert.doesNotMatch(hero, /Quero algo especial/)
 })
 
-test("a seção 'As três linhas' cobre Play/Ambient/Devotion, sem texto colorido fora do padrão AA, com destaque lateral de peças", () => {
+test("a seção 'Nossas linhas' cobre Play/Ambient/Devotion/Pet/Connect/Daily, sem texto colorido fora do padrão AA, com destaque lateral de peças", () => {
   const linhas = read("components/AsTresLinhas.tsx")
   assert.match(linhas, /id="linhas"/)
   assert.match(linhas, /Gira, monta, se diverte\./)
   assert.match(linhas, /Luz que desenha sombra\./)
   assert.match(linhas, /Guarda o que se ama\./)
+  assert.match(linhas, /Cuidado que acompanha\./)
+  assert.match(linhas, /Conectar pessoas e empresas\./)
+  assert.match(linhas, /Menos improviso\. Mais rotina\./)
   assert.match(linhas, /text-quartzo/)
   assert.doesNotMatch(linhas, /text-play-coral/)
   assert.doesNotMatch(linhas, /text-devotion-blue/)
   assert.doesNotMatch(linhas, /text-cobre-deep/)
+  assert.doesNotMatch(linhas, /text-pet-salvia/)
+  assert.doesNotMatch(linhas, /text-connect-grafite/)
   assert.match(linhas, /produtos\.filter/)
   assert.match(linhas, /slice\(0, 3\)/)
   assert.match(linhas, /chegando em breve/)
@@ -74,11 +81,14 @@ test("homepage inclui 'As três linhas' entre o Hero e Brindes Corporativos", ()
   assert.match(read("app/page.tsx"), /AsTresLinhas/)
 })
 
-test("navbar: Catálogo (dropdown com Ambient/Devotion/Play/Brindes Corporativos), Quem somos e Contato no nível principal", () => {
+test("navbar: Catálogo (dropdown com Ambient/Devotion/Play/Pet/Connect/Daily/Brindes Corporativos), Quem somos e Contato no nível principal", () => {
   const navbar = read("components/Navbar.tsx")
   assert.match(navbar, /label: "Ambient"/)
   assert.match(navbar, /label: "Devotion"/)
   assert.match(navbar, /label: "Play"/)
+  assert.match(navbar, /label: "Pet"/)
+  assert.match(navbar, /label: "Connect"/)
+  assert.match(navbar, /label: "Daily"/)
   assert.match(navbar, /label: "Brindes Corporativos"/)
   assert.match(navbar, /label: "Quem somos"/)
   assert.match(navbar, /label: "Contato"/)

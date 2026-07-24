@@ -7,7 +7,7 @@ import LogoIcon from "./LogoIcon"
 import { produtos, slugify } from "@/lib/produtos"
 
 interface Linha {
-  id: "play" | "ambient" | "devotion"
+  id: "play" | "ambient" | "devotion" | "pet" | "connect" | "daily"
   nome: string
   escopo: string
   tagline: string
@@ -48,6 +48,36 @@ const LINHAS: Linha[] = [
     corFundoAtivo: "bg-devotion-blue/10",
     corBolinha: "bg-devotion-blue",
   },
+  {
+    id: "pet",
+    nome: "Pet",
+    escopo: "Identificação · Organização · Enriquecimento",
+    tagline: "Cuidado que acompanha.",
+    radiusAtivo: "rounded-none",
+    corBorda: "border-pet-salvia",
+    corFundoAtivo: "bg-pet-salvia/10",
+    corBolinha: "bg-pet-salvia",
+  },
+  {
+    id: "connect",
+    nome: "Connect",
+    escopo: "Brindes corporativos · Personalização · Relacionamento",
+    tagline: "Conectar pessoas e empresas.",
+    radiusAtivo: "rounded-none",
+    corBorda: "border-connect-grafite",
+    corFundoAtivo: "bg-connect-grafite/10",
+    corBolinha: "bg-connect-grafite",
+  },
+  {
+    id: "daily",
+    nome: "Daily",
+    escopo: "Organização · Apoio · Soluções do dia a dia",
+    tagline: "Menos improviso. Mais rotina.",
+    radiusAtivo: "rounded-none",
+    corBorda: "border-cobre-deep",
+    corFundoAtivo: "bg-cobre-deep/10",
+    corBolinha: "bg-cobre-deep",
+  },
 ]
 
 export default function AsTresLinhas() {
@@ -71,7 +101,7 @@ export default function AsTresLinhas() {
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <span className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-cobre-text">
-            AS TRÊS LINHAS
+            NOSSAS LINHAS
           </span>
           <h2 className="font-display mt-4 text-3xl font-light text-carvao md:text-4xl">
             Cada linha, um jeito de criar
